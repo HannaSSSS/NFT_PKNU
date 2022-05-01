@@ -107,7 +107,7 @@ class NFTBC extends React.Component {
               <div className="flex pl-2 px-2 mb-2">
                 <div className=" relative pl-2 px-2">
                   <button  onClick={ event => this.setState({backgroundColor:randomColor()})} className="py-2 px-4 bg-purple-400 hover:bg-purple-700 focus:ring-purple-500 focus:ring-offset-purple-200 text-white w-full transition ease-in duration-200 text-center text-base font-semibold shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2  rounded-lg ">
-                    랜덤 배경
+                    랜덤 배경  .
                   </button>
                 </div>
                 <div className="relative pl-2 px-2">
