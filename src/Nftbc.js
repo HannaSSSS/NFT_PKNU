@@ -7,11 +7,14 @@ class NFTBC extends React.Component {
 
   
   state = {
+
+
+
     displayColorPickerBackground: false,
     displayColorPickerText: false,
-    fullNameData : "Your Full Name",
-    titleData : "Your Title",
-    otherData : "Email|Company|Website|Twitter",
+    fullNameData : "이름",
+    titleData : "타이틀",
+    otherData : "이메일|회사|웹사이트|SNS",
     backgroundColor : "#a3eeff",
     textColor : "#17aab2", 
     walletAddress : "",
@@ -25,7 +28,7 @@ class NFTBC extends React.Component {
       && this.state.otherData != "" 
       && this.state.fullNameData != "Your Full Name" 
       && this.state.titleData != "Your Title" 
-      && this.state.otherData != "Email|Company|Website|Twitter"
+      && this.state.otherData != "Email|Company|Website|SNS"
       && this.state.fullNameData.length < 35
       && this.state.titleData.length < 40
       && this.state.otherData.length < 40
@@ -79,7 +82,7 @@ class NFTBC extends React.Component {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 flex mb-4">
         <div className="flex flex-col w-full max-w-md px-4 py-8 bg-white rounded-lg shadow dark:bg-gray-800 sm:px-6 md:px-8 lg:px-10">
             <div className="self-center mb-6 text-xl font-light text-gray-600 sm:text-2xl dark:text-white">
-              Do you want one? Each card is only 1 MATIC
+              명함을 원하십니까? 1 MATIC이 필요합니다
             </div>
             <div className="mt-8">
               
@@ -104,12 +107,12 @@ class NFTBC extends React.Component {
               <div className="flex pl-2 px-2 mb-2">
                 <div className=" relative pl-2 px-2">
                   <button  onClick={ event => this.setState({backgroundColor:randomColor()})} className="py-2 px-4 bg-purple-400 hover:bg-purple-700 focus:ring-purple-500 focus:ring-offset-purple-200 text-white w-full transition ease-in duration-200 text-center text-base font-semibold shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2  rounded-lg ">
-                    Random Background
+                    랜덤 배경
                   </button>
                 </div>
                 <div className="relative pl-2 px-2">
                   <button onClick={ this.handleClickBackground } className="py-2 px-4 bg-purple-400 hover:bg-purple-700 focus:ring-purple-500 focus:ring-offset-purple-200 text-white w-full transition ease-in duration-200 text-center text-base font-semibold shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2  rounded-lg ">
-                    Choose Background
+                    배경 선택
                   </button>
                   { this.state.displayColorPickerBackground ? <div style={ popover }>
           <div style={ cover } onClick={ this.handleCloseBackground }/>
@@ -121,12 +124,12 @@ class NFTBC extends React.Component {
               <div className="flex pl-2 px-2 mb-12">
                 <div className=" relative pl-2 px-2 ">
                   <button  onClick={ event => this.setState({textColor:randomColor()})} className="py-2 px-4 bg-purple-400 hover:bg-purple-700 focus:ring-purple-500 focus:ring-offset-purple-200 text-white w-full transition ease-in duration-200 text-center text-base font-semibold shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2  rounded-lg ">
-                  Random Font Color
+                  랜덤 글자색
                   </button>
                 </div>
                 <div className=" relative pl-2 px-2 ">
                   <button  onClick={ this.handleClickText} className="py-2 px-4 bg-purple-400 hover:bg-purple-700 focus:ring-purple-500 focus:ring-offset-purple-200 text-white w-full transition ease-in duration-200 text-center text-base font-semibold shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2  rounded-lg ">
-                  Choose Font Color 
+                  글자색 선택
                   </button>
                   { this.state.displayColorPickerText ? <div style={ popover }>
           <div style={ cover } onClick={ this.handleCloseText }/>
@@ -137,7 +140,7 @@ class NFTBC extends React.Component {
 
               <div className="flex w-full">
                 <button  type="submit" onClick={(e) => this.mint(e)} className="py-2 px-4 bg-purple-600 hover:bg-purple-700 focus:ring-purple-500 focus:ring-offset-purple-200 text-white w-full transition ease-in duration-200 text-center text-base font-semibold shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2  rounded-lg ">
-                  Mint your NFT Business Card
+                  당신의 NFT 명함 만들기
                 </button>
               </div>
            
